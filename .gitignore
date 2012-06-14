@@ -11,3 +11,28 @@ project/plugins/project/
 
 # Scala-IDE specific
 .scala_dependencies
+
+
+##### Scala IDEA
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+*.off
+*.old
+.DS_Store
+
+
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+.idea_modules/
+*.*___jb_old___
+*.*___jb_bak___
+.idea/libraries/
+.idea/artifacts/
