@@ -3,12 +3,6 @@ package code.lib
 import net.liftweb.common.LazyLoggable
 import net.liftweb.http.LiftRules
 
-/**
- * Heirko project
- * User: Alexandre
- * Date: 07/06/12
- * Time: 20:43
- */
 
 trait BaseService extends LazyLoggable {
 
