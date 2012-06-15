@@ -11,7 +11,7 @@ import net.liftweb.mongodb.record.field.{ObjectIdPk, MongoPk}
 
 
 
-trait  MongoCRUDify[T <: MongoRecord[T] with ObjectIdPk[T]] extends   Crudify {
+trait  MongoCRUDify[T <: MongoRecord[T]] extends   Crudify {
   self: T with MongoMetaRecord[T]  =>
 
   type TheCrudType = T
@@ -37,7 +37,7 @@ trait  MongoCRUDify[T <: MongoRecord[T] with ObjectIdPk[T]] extends   Crudify {
 
   protected class SquerylBridge(in: TheCrudType) extends CrudBridge {
 
-    def delete_! =  { delete("_id", in.id.is); true}
+    def delete_! =  { delete("_id", in.id.toString); true}
 
     def save = {
      in.save
