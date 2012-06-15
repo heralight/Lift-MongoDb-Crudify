@@ -11,14 +11,6 @@ import net.liftweb.util.Helpers._
 import bootstrap.liftweb.MenuGroups
 
 
-/**
- * Heirko project
- * User: Alexandre
- * Date: 07/06/12
- * Time: 02:14
- */
-
-
 
 class Customer private() extends MongoRecord[Customer] with ObjectIdPk[Customer] {
   def meta = Customer
