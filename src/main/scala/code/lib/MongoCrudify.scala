@@ -8,12 +8,6 @@ import net.liftweb.common.Box
 import com.foursquare.rogue.Rogue._
 import net.liftweb.mongodb.record.field.{ObjectIdPk, MongoPk}
 
-/**
- * Heirko project
- * User: Alexandre
- * Date: 14/06/12
- * Time: 16:22
- */
 
 
 
@@ -23,10 +17,6 @@ trait  MongoCRUDify[T <: MongoRecord[T] with ObjectIdPk[T]] extends   Crudify {
   type TheCrudType = T
 
   type FieldPointerType = Field[_, TheCrudType]
-
-  //def table: Table[TheCrudType]
-
-  //def idFromString(in: String): K
 
   override def calcPrefix = collectionName :: Nil
 
@@ -39,7 +29,6 @@ trait  MongoCRUDify[T <: MongoRecord[T] with ObjectIdPk[T]] extends   Crudify {
   }
 
   override def findForList(start: Long, count: Int) = { this.paginate(count).setPage(((start/ count) + 1).toInt).fetch()
-       // findAll
   }
 
   override def create = createRecord
